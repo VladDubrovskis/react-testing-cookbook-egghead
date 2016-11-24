@@ -9,6 +9,6 @@ describe('LikeCounter', () => {
     renderer.render(<LikeCounter count={5} />);
     const actual = renderer.getRenderOutput().type;
     const expected = 'a';
-    expect(actual).toIncludeJSX(expected);
+    expect(actual).toEqual(expected);
   });
 });
