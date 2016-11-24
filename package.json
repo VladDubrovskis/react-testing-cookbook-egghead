@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha './src/**/*.spec.js' --compilers js:babel-core/register",
+    "test": "mocha './src/**/*.spec.js' --compilers js:babel-core/register"
   },
   "dependencies": {
     "react": "^15.4.1",
