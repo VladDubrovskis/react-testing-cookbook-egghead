@@ -1,7 +1,10 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
+import expectJSX from 'expect-jsx';
 import LikeCounter from './LikeCounter';
+
+expect.extend(expectJSX);
 
 describe('LikeCounter', () => {
   it('should be a link', () => {
@@ -10,6 +13,14 @@ describe('LikeCounter', () => {
     const actual = renderer.getRenderOutput().type;
     const expected = 'a';
     expect(actual).toEqual(expected);
+  });
+
+  it('should render like counts', () => {
+    const renderer = TestUtils.createRenderer();
+    renderer.render(<LikeCounter count={5} />);
+    const actual = renderer.getRenderOutput();
+    const expected = '5 likes';
+    expect(actual).toIncludeJSX(expected);
   });
 
   describe('isActive', () => {
